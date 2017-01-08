@@ -1,0 +1,73 @@
+  /*字符图标初始化*/
+@font-face {
+  font-family: 'loadingIcon';
+  src:  url('./fonts/icomoon.eot?xma7yi');
+  src:  url('./fonts/icomoon.eot?xma7yi#iefix') format('embedded-opentype'),
+    url('./fonts/icomoon.ttf?xma7yi') format('truetype'),
+    url('./fonts/icomoon.woff?xma7yi') format('woff'),
+    url('./fonts/icomoon.svg?xma7yi#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+[icon]{
+  font-family: 'loadingIcon' ;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+/*字符图标结束*/
+div,i{
+  padding:0;
+  marging:0;
+}
+.box{
+  margin: 180px auto;
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+  position: relative;
+}
+.box i{
+  position: absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  transform: rotateY(90deg);
+/*  display:none;*/
+}
+.box i::before{
+  font-size: 70px;
+  padding-left: 15px;
+  line-height: 100px;
+}
+.box i:nth-child(1)::before{
+  content: '\e9cd';
+  color: #F8B265;
+}
+.box i:nth-child(2)::before{
+  content: '\e926';
+  color: #278DCE;
+}
+.box i:nth-child(3)::before{
+  content: '\e907';
+  color: #E85205;
+}
+.box i:nth-child(4)::before{
+  content: '\e986';
+  color: #9BD7C5;
+}
+.box .move{
+  animation:move 3s;
+}
+@keyframes move{
+  100%{ 
+  transform: rotateY(270deg);
+  }
+}
+

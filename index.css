@@ -39,7 +39,7 @@ div,i{
   right:0;
   bottom:0;
   transform: rotateY(90deg);
-/*  display:none;*/
+  /*display:none;*/
 }
 .box i::before{
   font-size: 70px;
@@ -63,7 +63,7 @@ div,i{
   color: #9BD7C5;
 }
 .box .move{
-  animation:move 3s;
+  animation:move 2s;
 }
 @keyframes move{
   100%{ 

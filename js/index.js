@@ -19,20 +19,21 @@
         current;
         moveFn();
     function moveFn(){
-        current=dom.eq(lastIndex);
-        current.addClass('move');
-        current.get(0).addEventListener(animationEvent, function() {
+        var current=dom.eq(lastIndex);
+        current.addClass('move');  
+ current.on(animationEvent, function(event) {
          // console.log($(this));
           $(this).removeClass('move');
           console.log(lastIndex);
          if(lastIndex==dom.length-1)
         {
           lastIndex=0;
+          alert('over');
         }else{
           lastIndex++;
+          moveFn();
         }
-        moveFn();
+        //e.preventDefault();
     });
    }
- 
   })();

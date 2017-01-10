@@ -15,12 +15,14 @@
    }
     var animationEvent = whichAnimationEvent();
     var dom=$('.box i');
+    var dot=$('.dot i');
     var lastIndex=0,
         current;
         moveFn();
     function moveFn(){
         var current=dom.eq(lastIndex);
         current.addClass('move');  
+        dot.addClass('move');
  current.on(animationEvent, function(event) {
          // console.log($(this));
           $(this).removeClass('move');

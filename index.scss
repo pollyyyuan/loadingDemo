@@ -1,21 +1,54 @@
-.move{
+.box{
+  width: 100px;
+  margin:150px auto;
+  position: relative;
   i{
-    
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    transition:all 1s;
+    transform:rotateY(90deg);
+    -webkit-transform:rotateY(90deg);
+    &::before{
+      font-size:50px;
+      line-height:50px; 
+    }
   }
 }
-$icon:'\e9cd','\e926','\e907','\e986';
+// .box .t{
+//   animation:moveIcon 1s;
+// }
+$interval:1.5s;
+.move{
+  i{
+    animation:moveIcon $interval ;
+    -webkit-animation:moveIcon $interval;
+  }
+}
+$icon:'\e9cd' '\e926' '\e907' '\e986';
+$iconColor:#3A97D2 #F38307 #DB5140 #529200;
 [icon]{
 	$n:1;
 	@each $i in $icon{
 		&:nth-child(#{$n}){
 			&::before{
 				content:$i;
+        color: nth($iconColor,$n);
 			}
 		}
+    .move &:nth-child(#{$n}){
+      animation-delay:($n - 1) * $interval;
+    }
 		$n:$n + 1;
 	}
 }
-// 字符图标
+@keyframes moveIcon{
+  100%{
+    transform:rotateY(270deg);
+    -webkit-transform:rotateY(270deg);
+  }
+}
+/* 配置字符图标 */
 @font-face {
   font-family: 'loadingIcon';
   src:  url('fonts/icomoon.eot?xma7yi');
@@ -26,7 +59,7 @@ $icon:'\e9cd','\e926','\e907','\e986';
   font-weight: normal;
   font-style: normal;
 }
-[class^="icon-"], [class*=" icon-"] {
+[icon] {
   font-family: 'loadingIcon' !important;
   speak: none;
   font-style: normal;

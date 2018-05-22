@@ -11,7 +11,7 @@
     -webkit-transform:rotateY(90deg);
     &::before{
       font-size:50px;
-      line-height:50px; 
+      line-height:50px;
     }
   }
 }
@@ -21,8 +21,8 @@
 $interval:1.5s;
 .move{
   i{
-    animation:moveIcon $interval ;
-    -webkit-animation:moveIcon $interval;
+    animation:moveIcon $interval infinite;
+    -webkit-animation:moveIcon $interval infinite;
   }
 }
 $icon:'\e9cd' '\e926' '\e907' '\e986';
